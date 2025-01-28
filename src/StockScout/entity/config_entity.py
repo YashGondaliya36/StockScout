@@ -9,4 +9,9 @@ class DataIngestionConfig:
     local_data_file: Path
 
 
-
+@dataclass(frozen=True)
+class DataValidationConfig:
+    root_dir : Path
+    local_data_file : Path
+    STATUS_FILE : str
+    all_schema : dict

@@ -9,3 +9,9 @@ data_validation:
   STATUS_FILE: artifacts/data_validation/status.txt
   local_data_file: artifacts/data_ingestion/data.csv
   root_dir: artifacts/data_validation
+
+data_transformation:
+  data_path: artifacts/data_ingestion/data.csv
+  root_dir: artifacts/data_transformation
+  scaled_data_file: artifacts/data_transformation/scaled_data.npy
+  scaler_file_path: artifacts/data_transformation/scaler.joblib
