@@ -1,6 +1,6 @@
 from src.StockScout.constants import *
 from src.StockScout.utils.common import read_yaml, create_directories
-from src.StockScout.entity.config_entity import DataIngestionConfig,DataValidationConfig
+from src.StockScout.entity.config_entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig
 
 class ConfigurationManager:
     def __init__(
@@ -44,3 +44,18 @@ class ConfigurationManager:
         )
 
         return data_validation_config
+
+    
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+
+        create_directories([config.root_dir])
+
+        data_transformation_config = DataTransformationConfig(
+            root_dir=config.root_dir,
+            data_path=config.data_path,
+            scaled_data_file=config.scaled_data_file,
+            scaler_file_path=config.scaler_file_path
+        )
+
+        return data_transformation_config

@@ -15,3 +15,11 @@ class DataValidationConfig:
     local_data_file : Path
     STATUS_FILE : str
     all_schema : dict
+
+
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    root_dir: Path
+    data_path: Path
+    scaled_data_file: Path
+    scaler_file_path: Path
