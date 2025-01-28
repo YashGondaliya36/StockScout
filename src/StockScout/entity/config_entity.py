@@ -8,3 +8,5 @@ class DataIngestionConfig:
     ticker: str
     local_data_file: Path
 
+
+

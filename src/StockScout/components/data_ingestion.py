@@ -13,7 +13,7 @@ class DataIngestion:
 
         # Download AAPL data 
         logger.info(f"{self.config.ticker}'s data download started")
-        data = yf.download(self.config.ticker)
+        data = yf.download(self.config.ticker,start='2011-01-01')
         logger.info(f"{self.config.ticker}'s data downloaded")
 
 

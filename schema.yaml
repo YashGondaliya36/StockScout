@@ -1,3 +1,2 @@
 COLUMNS:
-  Date : datetime64[ns]
   Close: float64
