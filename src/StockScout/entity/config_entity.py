@@ -23,7 +23,7 @@ class DataTransformationConfig:
     data_path: Path
     scaled_data_file: Path
     scaler_file_path: Path
-    
+
 
 @dataclass(frozen=True)
 class PartialModelTrainerConfig:
@@ -31,3 +31,12 @@ class PartialModelTrainerConfig:
     X_train_data_path: Path
     y_train_data_path: Path
     partial_model_name: str
+
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    X_test_data_path: Path
+    y_test_data_path: Path
+    model_path:Path
+    scaler_file_path:Path
+    metric_file_name: Path
