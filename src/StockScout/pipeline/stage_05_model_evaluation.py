@@ -15,8 +15,7 @@ class ModelEvaluationTrainingPipeline:
         model_evaluation_config = ModelEvaluation(config=model_evaluation_config)
         model_evaluation_config.save_results()
 
-
-
+        
 if __name__ == '__main__':
     try:
         logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
