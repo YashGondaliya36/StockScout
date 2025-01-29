@@ -33,3 +33,11 @@ model_evaluation:
   root_dir: artifacts/model_evaluation
   scaler_file_path: artifacts/data_transformation/scaler.joblib
   y_test_data_path: artifacts/data_transformation/y_test.npy
+
+
+full_model_trainer:
+  X_stacked_data_path: artifacts/data_transformation/X_stacked.npy
+  final_model_name: artifacts/full_model_trainer/model.h5
+  partial_model_name: artifacts/partial_model_trainer/partial_model.h5
+  root_dir: artifacts/full_model_trainer
+  y_stacked_data_path: artifacts/data_transformation/y_stacked.npy
