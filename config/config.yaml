@@ -4,14 +4,23 @@ data_ingestion:
   local_data_file: artifacts/data_ingestion
   root_dir: artifacts/data_ingestion
   ticker: AAPL
+  
 
 data_validation:
   STATUS_FILE: artifacts/data_validation/status.txt
   local_data_file: artifacts/data_ingestion/data.csv
   root_dir: artifacts/data_validation
 
+
 data_transformation:
   data_path: artifacts/data_ingestion/data.csv
   root_dir: artifacts/data_transformation
   scaled_data_file: artifacts/data_transformation/scaled_data.npy
   scaler_file_path: artifacts/data_transformation/scaler.joblib
+
+
+partial_model_trainer:
+  X_train_data_path: artifacts/data_transformation/X_train.npy
+  partial_model_name: artifacts/partial_model_trainer/partial_model.h5
+  root_dir: artifacts/partial_model_trainer
+  y_train_data_path: artifacts/data_transformation/y_train.npy
