@@ -1,6 +1,6 @@
 from src.StockScout.constants import *
 from src.StockScout.utils.common import read_yaml, create_directories
-from src.StockScout.entity.config_entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig,PartialModelTrainerConfig,ModelEvaluationConfig
+from src.StockScout.entity.config_entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig,PartialModelTrainerConfig,ModelEvaluationConfig,FullModelTrainerConfig
 
 class ConfigurationManager:
     def __init__(
@@ -90,3 +90,19 @@ class ConfigurationManager:
         )
 
         return model_evaluation_config
+    
+
+    def get_full_model_trainer_config(self) -> FullModelTrainerConfig:
+        config = self.config.full_model_trainer
+
+        create_directories([config.root_dir])
+
+        full_model_trainer_config = FullModelTrainerConfig(
+            root_dir=config.root_dir,
+            X_stacked_data_path = config.X_stacked_data_path,
+            y_stacked_data_path = config.y_stacked_data_path,
+            partial_model_name = config.partial_model_name,
+            final_model_name=config.final_model_name
+        )
+
+        return full_model_trainer_config
