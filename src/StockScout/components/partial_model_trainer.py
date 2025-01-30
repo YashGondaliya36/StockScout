@@ -28,8 +28,6 @@ class PartialModelTrainer:
         return model
 
 
-
-
     def partial_train(self):
 
         np.random.seed(42)
