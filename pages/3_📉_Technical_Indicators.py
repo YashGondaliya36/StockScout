@@ -32,11 +32,11 @@ def load_ticker_from_config():
     return config['data_ingestion']['ticker']
 
 def main():
-    st.title("Technical Indicators Analysis")
+    st.title("📉 Technical Indicators Analysis")
     
     # Ask user for time period for analysis
-    time_period = st.selectbox("Select the time period for analysis:", ['1d', '5d', '1mo', '3mo', '1y', '5y'])
-    
+    time_period = st.text_input("Enter the time period for analysis (e.g., '1d','2mo', '3y'):", '1y')
+
     # Load ticker from config.yaml
     ticker = load_ticker_from_config()
     st.write(f"Analyzing technical indicators for: **{ticker}** for the past {time_period}")

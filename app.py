@@ -3,7 +3,8 @@ import streamlit as st
 def main():
     st.set_page_config(
         page_title="StockScout - Intelligent Stock Analysis & Prediction",
-        layout="wide"
+        layout="wide",
+        page_icon='📈'
     )
 
     # Header Section
@@ -52,19 +53,19 @@ def main():
     st.markdown("## 🎯 How It Works")
     
     st.markdown("""
-    1. **Enter Stock Details**
-       - Input your desired stock symbol
-       - Choose prediction timeframe
+    1. **Enter Stock Symbol**
+       - Input any valid stock ticker (e.g., AAPL, MSFT)
+       - Choose your analysis timeframe
        
-    2. **Get Comprehensive Analysis**
-       - View price predictions with confidence intervals
-       - Access detailed fundamental analysis
-       - Explore technical indicators
+    2. **Select Analysis Type**
+       - Price Prediction: Get AI-powered forecasts
+       - Fundamental Analysis: View company metrics
+       - Technical Analysis: Study market indicators
        
-    3. **Make Informed Decisions**
-       - Compare different metrics
-       - Analyze trends and patterns
-       - Export reports for further analysis
+    3. **Analyze Results**
+       - Interactive charts and visualizations
+       - Key metrics and indicators
+       - Historical performance data
     """)
 
     # Footer Section

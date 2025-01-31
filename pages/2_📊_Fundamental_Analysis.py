@@ -47,7 +47,7 @@ def get_brief_summary(text, max_words=50):
     return ' '.join(words[:max_words]) + "..."
 
 def main():
-    st.title("Stock Fundamental Analysis")
+    st.title("📊 Stock Fundamental Analysis")
     
     # Load ticker from config.yaml
     ticker = load_ticker_from_config()
@@ -100,9 +100,8 @@ def main():
                 with col2:
                     st.subheader("Balance Sheet Metrics")
                     metrics = {
-                        "Total Assets": info.get('totalAssets'),
                         "Total Debt": info.get('totalDebt'),
-                        "Total Equity": info.get('totalStockholderEquity')
+                        "Cash and Cash Equivalents": info.get('totalCash')
                     }
                     for metric, value in metrics.items():
                         st.metric(metric, convert_to_indian_format(value))
@@ -124,12 +123,13 @@ def main():
 
             # Stock Performance Chart using Plotly Express
             with st.expander("📊 Stock Performance"):
-                hist = stock.history(period="1y")
+                time_period = st.text_input("Enter the time period for analysis (e.g., '1d','2mo', '3y'):", '1y')
+                hist = stock.history(period=time_period)
 
                 # Create a line chart for stock prices
                 fig = px.line(hist, x=hist.index, y=["Open", "High", "Low", "Close"],
                               labels={"value": "Stock Price (₹)", "variable": "Price Type"},
-                              title=f"{ticker} Stock Price Trend (Last 1 Year)")
+                              title=f"{ticker} Stock Price Trend ({time_period})")
 
                 # Create a bar chart for volume
                 fig_volume = px.bar(hist, x=hist.index, y="Volume",
