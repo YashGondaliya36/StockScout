@@ -47,7 +47,7 @@ def get_brief_summary(text, max_words=50):
     return ' '.join(words[:max_words]) + "..."
 
 def main():
-    st.title("📊 Stock Fundamental Analysis")
+    st.header("📊 Stock Fundamental Analysis",divider='rainbow')
     
     # Load ticker from config.yaml
     ticker = load_ticker_from_config()

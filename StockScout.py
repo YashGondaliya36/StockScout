@@ -8,16 +8,9 @@ def main():
     )
 
     # Header Section
-    st.title("🎯 StockScout")
+    st.header("🎯 StockScout",divider='rainbow')
     st.subheader("Your Intelligent Stock Analysis & Prediction Platform")
 
-    # Main Description
-    st.markdown("""
-    ### 📊 Transform Your Trading Strategy with Data-Driven Insights
-    
-    StockScout combines advanced machine learning with fundamental and technical analysis 
-    to help you make informed investment decisions.
-    """)
 
     st.markdown("## 🚀 Key Features")
     

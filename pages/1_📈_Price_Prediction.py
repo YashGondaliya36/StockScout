@@ -16,7 +16,7 @@ def update_config(ticker):
         yaml.dump(config, file, default_flow_style=False)
 
 def main():
-    st.title("📈 Stock Price Prediction")
+    st.header("📈 Stock Price Prediction",divider='rainbow')
     
     ticker = st.text_input("Enter Stock Symbol (e.g., AAPL):", "AAPL")
     days = st.number_input("Number of days to predict:", min_value=1, value=7)

@@ -32,7 +32,7 @@ def load_ticker_from_config():
     return config['data_ingestion']['ticker']
 
 def main():
-    st.title("📉 Technical Indicators Analysis")
+    st.header("📉 Technical Indicators Analysis",divider='rainbow')
     
     # Ask user for time period for analysis
     time_period = st.text_input("Enter the time period for analysis (e.g., '1d','2mo', '3y'):", '1y')
